@@ -1,0 +1,43 @@
+{
+  "name": "@yurai/material-3-tokens",
+  "version": "0.1.0",
+  "description": "Token set for Material 3 Expressive",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "material-design",
+    "material-3"
+  ],
+  "author": {
+    "name": "Yurai",
+    "url": "https://github.com/yurai-git"
+  },
+  "license": "BSD-3-Clause",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.4.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.4.1",
+  "type": "module",
+  "devDependencies": {
+    "@dprint/dockerfile": "^0.6.0",
+    "@dprint/json": "^0.23.0",
+    "@dprint/markdown": "^0.24.0",
+    "@dprint/typescript": "^0.96.1",
+    "@eslint/compat": "^2.1.1",
+    "@types/node": "^26.5.1",
+    "dprint-plugin-malva": "^0.16.0",
+    "dprint-plugin-markup": "^0.27.3",
+    "dprint-plugin-yaml": "^0.6.0",
+    "eslint": "^10.10.0",
+    "eslint-plugin-format": "^2.0.1",
+    "jiti": "^2.7.0",
+    "sass": "^1.104.1",
+    "typescript": "^7.0.2"
+  }
+}

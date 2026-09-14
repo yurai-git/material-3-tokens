@@ -1,0 +1,45 @@
+@use 'sass:list';
+@use 'sass:meta';
+
+@mixin define-token(
+  $design-system: 'md',
+  $class,
+  $category,
+  $map: (),
+  $_exclude: (),
+  $_path: (),
+) {
+  @each $_key, $_value in $map {
+    @if not ($_exclude and list.index($_exclude, $_key)) {
+      $_current-path: list.append($_path, $_key);
+
+      @if meta.type-of($_value) == 'map' {
+        @include define-token(
+          $design-system: $design-system,
+          $class: $class,
+          $category: $category,
+          $map: $_value,
+          $_exclude: $_exclude,
+          $_path: $_current-path,
+        );
+      } @else {
+        $_name: '';
+        @each $_segment in $_current-path {
+          @if $_segment != 'DEFAULT' {
+            @if $_name == '' {
+              $_name: $_segment;
+            } @else {
+              $_name: '#{$_name}-#{$_segment}';
+            }
+          }
+        }
+
+        @if $_name == '' {
+          --#{$design-system}-#{$class}-#{$category}: #{$_value};
+        } @else {
+          --#{$design-system}-#{$class}-#{$category}-#{$_name}: #{$_value};
+        }
+      }
+    }
+  }
+}

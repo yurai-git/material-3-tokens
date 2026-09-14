@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use 'sass:list';
+
+$colors: (
+  'primary': ('primary', '30'),
+  'on-primary': ('primary', '100'),
+  'primary-container': ('primary', '40'),
+  'on-primary-container': ('primary', '100'),
+  'secondary': ('secondary', '30'),
+  'on-secondary': ('secondary', '100'),
+  'secondary-container': ('secondary', '40'),
+  'on-secondary-container': ('secondary', '100'),
+  'tertiary': ('tertiary', '30'),
+  'on-tertiary': ('tertiary', '100'),
+  'tertiary-container': ('tertiary', '40'),
+  'on-tertiary-container': ('tertiary', '100'),
+  'error': ('error', '30'),
+  'on-error': ('error', '100'),
+  'error-container': ('error', '40'),
+  'on-error-container': ('error', '100'),
+  'surface': ('neutral', '98'),
+  'on-surface': ('neutral', '0'),
+  'surface-variant': ('neutral-variant', '90'),
+  'on-surface-variant': ('neutral-variant', '20'),
+  'surface-container-highest': ('neutral', '90'),
+  'surface-container-high': ('neutral', '92'),
+  'surface-container': ('neutral', '94'),
+  'surface-container-low': ('neutral', '96'),
+  'surface-container-lowest': ('neutral', '100'),
+  'inverse-surface': ('neutral', '20'),
+  'inverse-on-surface': ('neutral', '100'),
+  'outline': ('neutral-variant', '30'),
+  'outline-variant': ('neutral-variant', '50'),
+  'primary-fixed': ('primary', '40'),
+  'on-primary-fixed': ('primary', '100'),
+  'primary-fixed-dim': ('primary', '30'),
+  'on-primary-fixed-variant': ('primary', '100'),
+  'inverse-primary': ('primary', '80'),
+  'secondary-fixed': ('secondary', '40'),
+  'on-secondary-fixed': ('secondary', '100'),
+  'secondary-fixed-dim': ('secondary', '30'),
+  'on-secondary-fixed-variant': ('secondary', '100'),
+  'tertiary-fixed': ('tertiary', '40'),
+  'on-tertiary-fixed': ('tertiary', '100'),
+  'tertiary-fixed-dim': ('tertiary', '30'),
+  'on-tertiary-fixed-variant': ('tertiary', '100'),
+  'surface-bright': ('neutral', '98'),
+  'surface-dim': ('neutral', '87'),
+  'scrim': ('neutral', '0'),
+  'shadow': ('neutral', '0'),
+);
+
+:root.light-medium-contrast {
+  @each $role, $value in $colors {
+    --md-sys-color-#{$role}: var(
+      --md-ref-palette-#{list.nth($value, 1)}#{list.nth($value, 2)}
+    );
+  }
+}

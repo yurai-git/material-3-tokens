@@ -1,0 +1,46 @@
+@use '../../helpers' as *;
+
+$shapes: (
+  'corner': (
+    'full': '1000px',
+    'extra-large': (
+      'block-start': 'var(--md-sys-shape-corner-value-extra-large) var(--md-sys-shape-corner-value-extra-large) var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-none)',
+      'DEFAULT': 'var(--md-sys-shape-corner-value-extra-large)',
+    ),
+    'large': (
+      'block-start': 'var(--md-sys-shape-corner-value-large) var(--md-sys-shape-corner-value-large) var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-none)',
+      'inline-end': 'var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-large) var(--md-sys-shape-corner-value-large) var(--md-sys-shape-corner-value-none)',
+      'inline-start': 'var(--md-sys-shape-corner-value-large) var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-large)',
+      'DEFAULT': 'var(--md-sys-shape-corner-value-large)',
+    ),
+    'medium': 'var(--md-sys-shape-corner-value-medium)',
+    'small': 'var(--md-sys-shape-corner-value-small)',
+    'extra-small': (
+      'block-start': 'var(--md-sys-shape-corner-value-extra-small) var(--md-sys-shape-corner-value-extra-small) var(--md-sys-shape-corner-value-none) var(--md-sys-shape-corner-value-none)',
+      'DEFAULT': 'var(--md-sys-shape-corner-value-extra-small)',
+    ),
+    'none': 'var(--md-sys-shape-corner-value-none)',
+    'large-increased': 'var(--md-sys-shape-corner-value-large-increased)',
+    'extra-large-increased': 'var(--md-sys-shape-corner-value-extra-large-increased)',
+    'extra-extra-large': 'var(--md-sys-shape-corner-value-extra-extra-large)',
+  ),
+  'corner-value': (
+    'none': '0',
+    'extra-small': '4px',
+    'small': '8px',
+    'medium': '12px',
+    'large': '16px',
+    'large-increased': '20px',
+    'extra-large': '28px',
+    'extra-large-increased': '32px',
+    'extra-extra-large': '48px',
+  ),
+);
+
+:root {
+  @include define-token(
+    $class: 'sys',
+    $category: 'shape',
+    $map: $shapes,
+  );
+}

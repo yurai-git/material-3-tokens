@@ -1,0 +1,30 @@
+@use '../../helpers' as *;
+
+$measurements: (
+  'space0': '0',
+  'space25': '2px',
+  'space50': '4px',
+  'space75': '6px',
+  'space100': '8px',
+  'space125': '10px',
+  'space150': '12px',
+  'space175': '14px',
+  'space200': '16px',
+  'space250': '20px',
+  'space300': '24px',
+  'space400': '32px',
+  'space450': '36px',
+  'space500': '40px',
+  'space600': '48px',
+  'space700': '56px',
+  'space800': '64px',
+  'space900': '72px',
+);
+
+:root {
+  @include define-token(
+    $class: 'sys',
+    $category: 'measurements',
+    $map: $measurements,
+  );
+}

@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use 'sass:list';
+
+$colors: (
+  'primary': ('primary', '90'),
+  'on-primary': ('primary', '10'),
+  'primary-container': ('primary', '60'),
+  'on-primary-container': ('primary', '0'),
+  'secondary': ('secondary', '90'),
+  'on-secondary': ('secondary', '10'),
+  'secondary-container': ('secondary', '60'),
+  'on-secondary-container': ('secondary', '0'),
+  'tertiary': ('tertiary', '90'),
+  'on-tertiary': ('tertiary', '10'),
+  'tertiary-container': ('tertiary', '60'),
+  'on-tertiary-container': ('tertiary', '0'),
+  'error': ('error', '90'),
+  'on-error': ('error', '10'),
+  'error-container': ('error', '60'),
+  'on-error-container': ('error', '0'),
+  'surface': ('neutral', '6'),
+  'on-surface': ('neutral', '100'),
+  'surface-variant': ('neutral-variant', '30'),
+  'on-surface-variant': ('neutral-variant', '90'),
+  'surface-container-highest': ('neutral', '22'),
+  'surface-container-high': ('neutral', '17'),
+  'surface-container': ('neutral', '12'),
+  'surface-container-low': ('neutral', '10'),
+  'surface-container-lowest': ('neutral', '4'),
+  'inverse-surface': ('neutral', '90'),
+  'inverse-on-surface': ('neutral', '10'),
+  'outline': ('neutral-variant', '70'),
+  'outline-variant': ('neutral-variant', '60'),
+  'primary-fixed': ('primary', '90'),
+  'on-primary-fixed': ('primary', '0'),
+  'primary-fixed-dim': ('primary', '80'),
+  'on-primary-fixed-variant': ('primary', '20'),
+  'inverse-primary': ('primary', '30'),
+  'secondary-fixed': ('secondary', '90'),
+  'on-secondary-fixed': ('secondary', '0'),
+  'secondary-fixed-dim': ('secondary', '80'),
+  'on-secondary-fixed-variant': ('secondary', '20'),
+  'tertiary-fixed': ('tertiary', '90'),
+  'on-tertiary-fixed': ('tertiary', '0'),
+  'tertiary-fixed-dim': ('tertiary', '80'),
+  'on-tertiary-fixed-variant': ('tertiary', '20'),
+  'surface-bright': ('neutral', '24'),
+  'surface-dim': ('neutral', '6'),
+  'scrim': ('neutral', '0'),
+  'shadow': ('neutral', '0'),
+);
+
+:root.dark-medium-contrast {
+  @each $role, $value in $colors {
+    --md-sys-color-#{$role}: var(
+      --md-ref-palette-#{list.nth($value, 1)}#{list.nth($value, 2)}
+    );
+  }
+}

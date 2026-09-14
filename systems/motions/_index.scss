@@ -1,0 +1,132 @@
+@use '../../helpers' as *;
+
+$expressive: (
+  'spring': (
+    'fast': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-fast-spatial-duration) var(--md-sys-motion-spring-fast-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.42, 1.67, 0.21, 0.90)',
+        'duration': '350ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-fast-effects-duration) var(--md-sys-motion-spring-fast-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.31, 0.94, 0.34, 1.00)',
+        'duration': '150ms',
+      ),
+    ),
+    'default': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-default-spatial-duration) var(--md-sys-motion-spring-default-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.38, 1.21, 0.22, 1.00)',
+        'duration': '500ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-default-effects-duration) var(--md-sys-motion-spring-default-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.34, 0.80, 0.34, 1.00)',
+        'duration': '200ms',
+      ),
+    ),
+    'slow': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-slow-spatial-duration) var(--md-sys-motion-spring-slow-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.39, 1.29, 0.35, 0.98)',
+        'duration': '650ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-slow-effects-duration) var(--md-sys-motion-spring-slow-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.34, 0.88, 0.34, 1.00)',
+        'duration': '300ms',
+      ),
+    ),
+  ),
+);
+$standard: (
+  'spring': (
+    'fast': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-fast-spatial-duration) var(--md-sys-motion-spring-fast-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.27, 1.06, 0.18, 1.00)',
+        'duration': '350ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-fast-effects-duration) var(--md-sys-motion-spring-fast-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.31, 0.94, 0.34, 1.00)',
+        'duration': '150ms',
+      ),
+    ),
+    'default': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-default-spatial-duration) var(--md-sys-motion-spring-default-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.27, 1.06, 0.18, 1.00)',
+        'duration': '500ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-default-effects-duration) var(--md-sys-motion-spring-default-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.34, 0.80, 0.34, 1.00)',
+        'duration': '200ms',
+      ),
+    ),
+    'slow': (
+      'spatial': (
+        'DEFAULT': 'var(--md-sys-motion-spring-slow-spatial-duration) var(--md-sys-motion-spring-slow-spatial-easing-function)',
+        'easing-function': 'cubic-bezier(0.27, 1.06, 0.18, 1.00)',
+        'duration': '750ms',
+      ),
+      'effects': (
+        'DEFAULT': 'var(--md-sys-motion-spring-slow-effects-duration) var(--md-sys-motion-spring-slow-effects-easing-function)',
+        'easing-function': 'cubic-bezier(0.34, 0.88, 0.34, 1.00)',
+        'duration': '300ms',
+      ),
+    ),
+  ),
+);
+$motions: (
+  'easing': (
+    'emphasized': (
+      'accelerate': 'cubic-bezier(0.3, 0, 0.8, 0.15)',
+      'decelerate': 'cubic-bezier(0.05, 0.7, 0.1, 1)',
+    ),
+    'standard': (
+      'DEFAULT': 'cubic-bezier(0.2, 0, 0, 1)',
+      'accelerate': 'cubic-bezier(0.3, 0, 1, 1)',
+      'decelerate': 'cubic-bezier(0, 0, 0, 1)',
+    ),
+    'legacy': (
+      'DEFAULT': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      'accelerate': 'cubic-bezier(0.4, 0, 1, 1)',
+      'decelerate': 'cubic-bezier(0, 0, 0.2, 1)',
+    ),
+    'linear': 'cubic-bezier(0, 0, 1, 1)',
+  ),
+  'duration': (
+    'short1': '50ms',
+    'short2': '100ms',
+    'short3': '150ms',
+    'short4': '200ms',
+    'medium1': '250ms',
+    'medium2': '300ms',
+    'medium3': '350ms',
+    'medium4': '400ms',
+    'long1': '450ms',
+    'long2': '500ms',
+    'long3': '550ms',
+    'long4': '600ms',
+    'extra-long1': '700ms',
+    'extra-long2': '800ms',
+    'extra-long3': '900ms',
+    'extra-long4': '1000ms',
+  ),
+);
+
+:root {
+  @include define-token(
+    $class: 'sys',
+    $category: 'motion',
+    $map: $motions,
+  );
+  @include define-token(
+    $class: 'sys',
+    $category: 'motion',
+    $map: $expressive,
+  );
+}

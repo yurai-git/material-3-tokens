@@ -1,0 +1,17 @@
+@use '../../helpers' as *;
+
+$states: (
+  'dragged': ('state-layer-opacity': 16%),
+  'pressed': ('state-layer-opacity': 10%),
+  'focus': ('state-layer-opacity': 10%),
+  'hover': ('state-layer-opacity': 8%),
+  'disabled': ('state-layer-opacity': 38%),
+);
+
+:root {
+  @include define-token(
+    $class: 'sys',
+    $category: 'state',
+    $map: $states,
+  );
+}
