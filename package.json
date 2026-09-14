@@ -1,8 +1,9 @@
 {
   "name": "@yurai/material-3-tokens",
   "version": "0.1.0",
-  "description": "Token set for Material 3 Expressive",
+  "description": "Token set for Material 3 Expressive built with SCSS",
   "scripts": {
+    "build": "jiti scripts/build.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -30,7 +31,9 @@
     "@dprint/markdown": "^0.24.0",
     "@dprint/typescript": "^0.96.1",
     "@eslint/compat": "^2.1.1",
+    "@types/archiver": "^8.0.0",
     "@types/node": "^26.5.1",
+    "archiver": "^8.0.0",
     "dprint-plugin-malva": "^0.16.0",
     "dprint-plugin-markup": "^0.27.3",
     "dprint-plugin-yaml": "^0.6.0",
